@@ -28,19 +28,10 @@ if __name__ == "__main__":
         id='smu-blackjack-v0',
         entry_point='blackjack:BlackjackEnv'
     )
-    # ######################################################
-    # IMPORTANT: do not modify the code above this line! ###
-    # ######################################################
-
-    # here you can play with the code yourself
-    # for example you may want to split the code to two phases - training and testing
-    # or you may want to compare two agents
-    # feel free to modify the number of games played (highly recommended!)
-    # ... or whatever
+    
 
     env = get_env()
-    number_of_episodes = 1000000  # TODO do not forget to change the number of episodes
-
+    number_of_episodes = 1000000  
     #agent: AbstractAgent = RandomAgent(env, number_of_episodes)
     #agent: AbstractAgent = DealerAgent(env, number_of_episodes)
     #agent: AbstractAgent = TDAgent(env, number_of_episodes)
@@ -48,10 +39,7 @@ if __name__ == "__main__":
     #agent: AbstractAgent = AdvancedAgent(env, number_of_episodes)
     agent.train()
 
-    # in evaluate.py are some ideas that you might want to use to evaluate the agent
-    # feel free to modify the code as you want to
-    # have club nine, diamond jack and spades two in your hand, and dealer has club four?
-    # BlackjackObservation(copy.deepcopy(self.player_hand), copy.deepcopy(self.dealer_hand))
+    
     evaluate(env.get_episode_rewards())
     #What is the utility for drawing a card when you have club nine, diamond jack and spades two in your hand, and dealer has club four?
     print('first Q is:', agent.Q[(21, 4, False)])
